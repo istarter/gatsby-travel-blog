@@ -9,9 +9,9 @@ import {
   MobileIcon,
 } from "./NavbarElements"
 
-const NavBar = () => {
-  const { click, setClick } = useState(false)
-  const { scroll, setScroll } = useState(false)
+const Navbar = () => {
+  const  [click, setClick]  = useState(false)
+  const  [scroll, setScroll]  = useState(false)
 
   const handleClick = () => setClick(!click)
 
@@ -45,4 +45,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Navbar
