@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
 import { IconContext } from "react-icons/lib"
 import {
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false)
 
   const handleClick = () => setClick(!click)
+  const closeMobileMenu = () => setClick(false)
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -25,16 +26,18 @@ const Navbar = () => {
       setScroll(false)
     }
   }
+
   useEffect(() => {
     changeNav()
     window.addEventListener("scroll", changeNav)
   }, [])
+
   return (
     <>
       <IconContext.Provider value={{ color: "#141414" }}>
         <Nav active={scroll} click={click}>
           <NavbarContainer>
-            <NavLogo to="/">
+            <NavLogo to="/" onClick={closeMobileMenu}>
               <NavIcon />
               EXPLOR
             </NavLogo>
