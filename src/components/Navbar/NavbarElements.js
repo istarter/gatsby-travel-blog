@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 999;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 700px) {
     background: ${({ click }) => (click ? "#fff" : "transparent")};
     transition: 0.8s all ease;
   }
